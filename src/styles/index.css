@@ -19,8 +19,12 @@ body {
   @apply py-[6.25rem];
 }
 
+button.primary:hover {
+  @apply base-transition;
+}
+
 button.primary {
-  @apply bg-primary font-medium text-base py-2 px-4 rounded-lg base-transition hover:bg-primary/90;
+  @apply bg-primary font-medium text-base py-2 px-4 rounded-lg hover:bg-primary/90;
 }
 
 button.primary.ghost {
