@@ -7,7 +7,7 @@ body {
 }
 
 .base-transition {
-  transition: all 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .containerr {
