@@ -5,7 +5,7 @@ import { features } from 'utils/data'
 
 function Features() {
   return (
-    <div className="section-container">
+    <div id="features" className="section-container">
       <div className="containerr">
         <div className="mb-20">
           <h1 className="text-[2.75rem] font-bold mb-2.5">Tính năng</h1>

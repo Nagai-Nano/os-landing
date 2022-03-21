@@ -1,6 +1,6 @@
 import Cta from 'assets/cta.png'
+import Button from 'components/Button'
 import { redirectToMainPage } from 'utils/functions'
-import Button from './Button'
 
 function CallToAction() {
   return (

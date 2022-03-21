@@ -21,7 +21,7 @@ function Button({
           : 'py-4 px-8 text-base',
         ghost
           ? 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
-          : 'bg-primary text-white hover:bg-primary/90',
+          : 'bg-primary border-2 border-primary text-white hover:bg-primary/90',
         className
       )}
       {...props}

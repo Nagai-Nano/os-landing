@@ -2,7 +2,7 @@ import { benefits } from 'utils/data'
 
 function Benefits() {
   return (
-    <div className="bg-primary-lv1 section-container">
+    <div id="benefits" className="bg-primary-lv1 section-container">
       <div className="containerr">
         <div className="mb-20">
           <h1 className="text-[2.75rem] font-bold mb-2.5">Lợi ích</h1>

@@ -5,7 +5,7 @@ import { extras } from 'utils/data'
 
 function Extra() {
   return (
-    <div className="bg-primary-lv1 section-container">
+    <div id="extra" className="bg-primary-lv1 section-container">
       <div className="containerr grid grid-cols-2 items-center gap-16">
         <div className="">
           <h1 className="text-[2.75rem] font-bold mb-2.5">Góc thư giãn</h1>

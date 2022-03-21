@@ -22,7 +22,8 @@ import { Task, Bell, Layout, News } from 'icons'
 export const navItems = [
   { key: 'home', label: 'Trang chủ' },
   { key: 'benefits', label: 'Lợi ích' },
-  { key: 'features', label: 'Tính năng' }
+  { key: 'features', label: 'Tính năng' },
+  { key: 'extra', label: 'Góc thư giãn' }
 ]
 
 export const benefits = [
@@ -81,16 +82,16 @@ export const features = [
 
 export const extras = [
   Cos1,
-  Cos2,
+  Cos8,
   Cos3,
   Cos4,
   Cos5,
   Cos6,
   Cos7,
-  Cos8,
   Cos9,
   Cos10,
   Cos11,
+  Cos2,
   Cos12
 ]
 

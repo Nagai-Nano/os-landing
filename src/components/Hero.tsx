@@ -1,10 +1,11 @@
 import HeroBg from 'assets/hero-bg.png'
+import Button from 'components/Button'
 import { redirectToMainPage } from 'utils/functions'
-import Button from './Button'
 
 function Hero() {
   return (
     <div
+      id="home"
       className="w-full min-h-screen !bg-cover !bg-no-repeat !bg-center"
       style={{ backgroundImage: `url(${HeroBg})` }}
     >
