@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import cx from 'classnames'
 
 import { Logo } from 'icons'
+import Button from './Button'
 import { navItems } from 'utils/data'
+import { redirectToMainPage } from 'utils/functions'
 
 function Header() {
   const [scrollTop, setScrollTop] = useState(0)
@@ -44,7 +46,9 @@ function Header() {
               {label}
             </div>
           ))}
-          <button className="primary ghost">Tham gia ngay</button>
+          <Button ghost onClick={redirectToMainPage}>
+            Tham gia ngay
+          </Button>
         </div>
       </div>
     </div>

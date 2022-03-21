@@ -96,6 +96,6 @@ export const extras = [
 
 export const footerLinks = [
   { label: 'Otakusan', url: 'https://otakusan.net/' },
-  { label: 'Facebook', url: 'https://www.facebook.com/gaming/otakusan.net2' },
+  { label: 'Facebook', url: 'https://www.facebook.com/otakusan.net2' },
   { label: 'Discord', url: 'https://discord.gg/Sc3M3ym' }
 ]

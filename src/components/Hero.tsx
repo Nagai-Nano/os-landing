@@ -1,4 +1,6 @@
 import HeroBg from 'assets/hero-bg.png'
+import { redirectToMainPage } from 'utils/functions'
+import Button from './Button'
 
 function Hero() {
   return (
@@ -20,7 +22,9 @@ function Hero() {
             thì đây là nơi dành cho bạn.
           </p>
         </div>
-        <button className="primary mt-7 !py-3 !px-8">Tham gia ngay</button>
+        <Button size="large" className="mt-7" onClick={redirectToMainPage}>
+          Tham gia ngay
+        </Button>
       </div>
     </div>
   )

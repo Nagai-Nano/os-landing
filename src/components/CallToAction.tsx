@@ -1,4 +1,6 @@
 import Cta from 'assets/cta.png'
+import { redirectToMainPage } from 'utils/functions'
+import Button from './Button'
 
 function CallToAction() {
   return (
@@ -9,7 +11,9 @@ function CallToAction() {
           <h1 className="text-[2.75rem] font-bold">
             Hãy đăng nhập và đăng truyện <br /> của bạn ngay hôm nay
           </h1>
-          <button className="primary mt-10 !py-3 !px-8">Tham gia ngay</button>
+          <Button size="large" className="mt-10" onClick={redirectToMainPage}>
+            Tham gia ngay
+          </Button>
         </div>
       </div>
     </div>
