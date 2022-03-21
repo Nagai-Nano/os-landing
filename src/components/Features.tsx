@@ -1,13 +1,20 @@
+import { motion } from 'framer-motion'
 import cx from 'classnames'
-import { ArrowRight } from 'icons'
 
+import { ArrowRight } from 'icons'
 import { features } from 'utils/data'
 
 function Features() {
   return (
     <div id="features" className="section-container">
       <div className="containerr">
-        <div className="mb-14 md:mb-20">
+        <motion.div
+          className="mb-14 md:mb-20"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, type: 'tween', ease: 'easeIn' }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-[2rem] md:text-[2.75rem] font-bold mb-1.5 md:mb-2.5">
             Tính năng
           </h1>
@@ -15,13 +22,17 @@ function Features() {
             Nhiều tính năng hữu ích giúp cho việc trải nghiệm trở nên đơn giản
             và thú vị hơn
           </p>
-        </div>
+        </motion.div>
         {features.map(({ title, desc, img, url }, idx) => {
           const isEven = idx % 2 === 0
           return (
-            <div
+            <motion.div
               key={title}
               className="relative flex flex-wrap lg:flex-nowrap items-center gap-5 md:gap-8 p-6 lg:py-6 lg:px-7 bg-primary-lv1 mb-5 sm:mb-10 md:mb-20 last:mb-0 rounded-md"
+              initial={{ opacity: 0, x: isEven ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, type: 'tween', ease: 'easeIn' }}
+              viewport={{ once: true }}
             >
               <div
                 className={cx(
@@ -54,7 +65,7 @@ function Features() {
                   </a>
                 )}
               </div>
-            </div>
+            </motion.div>
           )
         })}
       </div>

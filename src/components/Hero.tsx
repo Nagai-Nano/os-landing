@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import HeroBg from 'assets/hero-bg.png'
 import HeroMobileBg from 'assets/hero-mobile-bg.png'
 
@@ -6,7 +8,12 @@ import { redirectToMainPage } from 'utils/functions'
 
 function Hero() {
   return (
-    <div id="home" className="relative w-full min-h-[42.5rem] md:min-h-screen">
+    <motion.div
+      id="home"
+      className="relative w-full min-h-[42.5rem] md:min-h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div
         style={{ backgroundImage: `url(${HeroBg})` }}
         className="hidden md:block absolute top-0 left-0 bottom-0 right-0 !bg-cover !bg-no-repeat !bg-center"
@@ -37,7 +44,7 @@ function Hero() {
           Tham gia ngay
         </Button>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
