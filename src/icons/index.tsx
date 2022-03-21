@@ -1,6 +1,8 @@
 export { ArrowRight } from './ArrowRight'
+export { Close } from './Close'
 export { Bell } from './Bell'
 export { Layout } from './Layout'
 export { Logo } from './Logo'
+export { Menu } from './Menu'
 export { News } from './News'
 export { Task } from './Task'

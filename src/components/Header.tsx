@@ -1,15 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import { debounce } from 'lodash'
 import cx from 'classnames'
 
-import { Logo } from 'icons'
+import { Logo, Menu } from 'icons'
 import Button from 'components/Button'
 import { navItems } from 'utils/data'
 import { redirectToMainPage } from 'utils/functions'
 
+import Sider from './Sider'
+
 function Header() {
   const [scrollTop, setScrollTop] = useState(0)
   const [active, setActive] = useState('home')
+  const [visible, setVisible] = useState(false)
 
   const headerRef = useRef<HTMLDivElement>(null)
   const nodesRef = useRef<{ [key: string]: HTMLElement | null }>()
@@ -67,47 +71,64 @@ function Header() {
   }
 
   return (
-    <div
-      ref={headerRef}
-      className={cx(
-        'base-transition fixed top-0 left-0 right-0 w-full h-[3.4375rem] md:h-[4.6875rem] bg-background/20 backdrop-blur-[2px] z-[2]',
-        scrollTop > 10 && '!bg-[#202020]'
-      )}
-    >
-      <div className="containerr h-full flex items-center justify-between gap-4">
-        <a href="/">
-          <Logo className="text-white w-32 md:w-40" />
-        </a>
-        <div className="hidden md:flex h-full items-center gap-8 lg:gap-9">
-          {navItems.map(({ key, label }) => (
-            <div
-              key={key}
-              onClick={() => scrollIntoView(key)}
-              className={cx(
-                'relative h-full base-transition inline-flex items-center px-1',
-                'font-medium cursor-pointer text-white/70 hover:!text-primary',
-                key === active && '!text-primary !border-primary'
-              )}
-            >
-              <div
-                className={cx(
-                  'base-transition absolute bottom-0 left-0 w-full h-1 rounded-sm',
-                  key === active ? 'bg-primary' : 'bg-transparent'
-                )}
-              />
-              {label}
-            </div>
-          ))}
-          <Button
-            className="hidden lg:flex ml-3"
-            ghost={active === 'home'}
-            onClick={redirectToMainPage}
+    <Fragment>
+      <div
+        ref={headerRef}
+        className={cx(
+          'base-transition fixed top-0 left-0 right-0 w-full h-[3.4375rem] md:h-[4.6875rem] bg-background/20 backdrop-blur-[2px] z-[2]',
+          scrollTop > 10 && '!bg-[#202020]'
+        )}
+      >
+        <div className="containerr h-full flex items-center justify-between gap-4">
+          <a href="/">
+            <Logo className="text-white w-32 md:w-40" />
+          </a>
+          <div
+            className="block md:hidden cursor-pointer"
+            onClick={() => setVisible(true)}
           >
-            Tham gia ngay
-          </Button>
+            <Menu className="w-6 h-6" />
+          </div>
+          <div className="hidden md:flex h-full items-center gap-8 lg:gap-9">
+            {navItems.map(({ key, label }) => (
+              <div
+                key={key}
+                onClick={() => scrollIntoView(key)}
+                className={cx(
+                  'relative h-full base-transition inline-flex items-center px-1',
+                  'font-medium cursor-pointer text-white/70 hover:!text-primary',
+                  key === active && '!text-primary !border-primary'
+                )}
+              >
+                <div
+                  className={cx(
+                    'base-transition absolute bottom-0 left-0 w-full h-1 rounded-sm',
+                    key === active ? 'bg-primary' : 'bg-transparent'
+                  )}
+                />
+                {label}
+              </div>
+            ))}
+            <Button
+              className="hidden lg:flex ml-3"
+              ghost={active === 'home'}
+              onClick={redirectToMainPage}
+            >
+              Tham gia ngay
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+      <AnimatePresence initial={false}>
+        {visible && (
+          <Sider
+            active={active}
+            scrollIntoView={scrollIntoView}
+            onClose={() => setVisible(false)}
+          />
+        )}
+      </AnimatePresence>
+    </Fragment>
   )
 }
 
