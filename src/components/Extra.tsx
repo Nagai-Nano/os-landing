@@ -6,15 +6,17 @@ import { extras } from 'utils/data'
 function Extra() {
   return (
     <div id="extra" className="bg-primary-lv1 section-container">
-      <div className="containerr grid grid-cols-2 items-center gap-16">
+      <div className="containerr grid grid-cols-1 lg:grid-cols-2 items-center gap-14 md:gap-20 lg:gap-16">
         <div className="">
-          <h1 className="text-[2.75rem] font-bold mb-2.5">Góc thư giãn</h1>
-          <p className="text-lg text-text-color tracking-[.2px]">
+          <h1 className="text-[2rem] md:text-[2.75rem] font-bold mb-1.5 md:mb-2.5">
+            Góc thư giãn
+          </h1>
+          <p className="text-base md:text-lg text-text-color tracking-[.2px]">
             Kho ảnh cosplay chất lượng luôn được cập nhật mỗi ngày, nơi thích
             hợp để xả stress sau những giờ dịch dọt căng thẳng.
           </p>
           <a
-            className="base-transition inline-flex mt-4 font-medium text-primary items-center gap-2 hover:text-primary/90"
+            className="base-transition inline-flex mt-3 md:mt-4 font-medium text-primary items-center gap-2 hover:text-primary/90"
             href="https://otakusan.net/Cosplay"
             target="_blank"
             rel="noreferrer"
@@ -23,7 +25,7 @@ function Extra() {
           </a>
         </div>
         <PerfectScrollbar
-          className="grid grid-cols-3 gap-3 max-h-[41rem] overflow-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[41rem] overflow-auto"
           options={{ wheelPropagation: false }}
         >
           {extras.map((img, idx) => (
@@ -31,7 +33,7 @@ function Extra() {
               key={img}
               src={img}
               alt={idx.toString()}
-              className="w-full h-[16.25rem] object-cover rounded-sm"
+              className="w-full h-full sm:h-96 lg:h-[16.25rem] object-cover rounded-sm"
               style={{ boxShadow: '0px 2px 16px rgba(110, 170, 183, 0.25)' }}
             />
           ))}

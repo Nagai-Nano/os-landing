@@ -7,9 +7,11 @@ function Features() {
   return (
     <div id="features" className="section-container">
       <div className="containerr">
-        <div className="mb-20">
-          <h1 className="text-[2.75rem] font-bold mb-2.5">Tính năng</h1>
-          <p className="text-lg text-text-color tracking-[.2px]">
+        <div className="mb-14 md:mb-20">
+          <h1 className="text-[2rem] md:text-[2.75rem] font-bold mb-1.5 md:mb-2.5">
+            Tính năng
+          </h1>
+          <p className="text-base md:text-lg text-text-color tracking-[.2px]">
             Nhiều tính năng hữu ích giúp cho việc trải nghiệm trở nên đơn giản
             và thú vị hơn
           </p>
@@ -19,28 +21,30 @@ function Features() {
           return (
             <div
               key={title}
-              className="relative flex items-center gap-8 py-6 px-7 bg-primary-lv1 mb-20 last:mb-0 rounded-md"
+              className="relative flex flex-wrap lg:flex-nowrap items-center gap-5 md:gap-8 p-6 lg:py-6 lg:px-7 bg-primary-lv1 mb-5 sm:mb-10 md:mb-20 last:mb-0 rounded-md"
             >
               <div
                 className={cx(
-                  'absolute top-0 bg-primary/95 w-1.5 h-full',
+                  'hidden lg:block absolute top-0 bg-primary/95 w-1.5 h-full',
                   isEven ? 'right-0 rounded-r-md' : 'left-0 rounded-l-md'
                 )}
               />
               <img
                 src={img}
                 alt={title}
-                className="max-w-[28.75rem] rounded-sm"
+                className="shrink-0 w-full lg:max-w-[28.75rem] rounded-sm"
                 style={{ boxShadow: '0px 2px 8px rgba(110, 170, 183, 0.1)' }}
               />
-              <div className={cx('grow', !isEven && 'order-[-1]')}>
-                <div className="text-[1.5rem] leading-none mb-3.5 font-medium">
+              <div className={cx('grow', !isEven && 'order-1 lg:order-[-1]')}>
+                <div className="text-[1.2rem] md:text-[1.5rem] leading-normal md:leading-none mb-2 md:mb-3.5 font-medium">
                   {title}
                 </div>
-                <div className="text-text-color/90">{desc}</div>
+                <div className="text-sm md:text-base text-text-color/90">
+                  {desc}
+                </div>
                 {url && (
                   <a
-                    className="base-transition inline-flex mt-4 font-medium text-primary items-center gap-2 hover:text-primary/90"
+                    className="base-transition text-sm md:text-base inline-flex mt-3 md:mt-4 font-medium text-primary items-center gap-2 hover:text-primary/90"
                     href={url}
                     target="_blank"
                     rel="noreferrer"

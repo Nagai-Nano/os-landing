@@ -16,5 +16,5 @@ body {
 }
 
 .section-container {
-  @apply py-[6.25rem];
+  @apply py-[3.75rem] md:py-[6.25rem];
 }

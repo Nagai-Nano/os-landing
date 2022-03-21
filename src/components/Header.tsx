@@ -70,15 +70,15 @@ function Header() {
     <div
       ref={headerRef}
       className={cx(
-        'base-transition fixed top-0 left-0 right-0 w-full h-[4.6875rem] bg-background/20 backdrop-blur-[2px] z-[1]',
+        'base-transition fixed top-0 left-0 right-0 w-full h-[3.4375rem] md:h-[4.6875rem] bg-background/20 backdrop-blur-[2px] z-[2]',
         scrollTop > 10 && '!bg-[#202020]'
       )}
     >
-      <div className="containerr h-full flex items-center justify-between">
+      <div className="containerr h-full flex items-center justify-between gap-4">
         <a href="/">
-          <Logo className="text-white w-40" />
+          <Logo className="text-white w-32 md:w-40" />
         </a>
-        <div className="h-full flex items-center gap-9">
+        <div className="hidden md:flex h-full items-center gap-8 lg:gap-9">
           {navItems.map(({ key, label }) => (
             <div
               key={key}
@@ -99,7 +99,7 @@ function Header() {
             </div>
           ))}
           <Button
-            className="ml-3"
+            className="hidden lg:flex ml-3"
             ghost={active === 'home'}
             onClick={redirectToMainPage}
           >
